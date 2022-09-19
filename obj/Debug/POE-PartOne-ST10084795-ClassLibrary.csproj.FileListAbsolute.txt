@@ -1,0 +1,6 @@
+C:\Users\natha\source\repos\POE-PartOne-ST10084795-ClassLibrary\bin\Debug\POE-PartOne-ST10084795-ClassLibrary.dll
+C:\Users\natha\source\repos\POE-PartOne-ST10084795-ClassLibrary\bin\Debug\POE-PartOne-ST10084795-ClassLibrary.pdb
+C:\Users\natha\source\repos\POE-PartOne-ST10084795-ClassLibrary\obj\Debug\POE-PartOne-ST10084795-ClassLibrary.csproj.AssemblyReference.cache
+C:\Users\natha\source\repos\POE-PartOne-ST10084795-ClassLibrary\obj\Debug\POE-PartOne-ST10084795-ClassLibrary.csproj.CoreCompileInputs.cache
+C:\Users\natha\source\repos\POE-PartOne-ST10084795-ClassLibrary\obj\Debug\POE-PartOne-ST10084795-ClassLibrary.dll
+C:\Users\natha\source\repos\POE-PartOne-ST10084795-ClassLibrary\obj\Debug\POE-PartOne-ST10084795-ClassLibrary.pdb
