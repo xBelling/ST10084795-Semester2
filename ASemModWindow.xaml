@@ -1,0 +1,89 @@
+﻿<Window x:Class="POE_PartOne_ST10084795.ASemModWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:POE_PartOne_ST10084795"
+        mc:Ignorable="d"
+        Title="MenuWindow" Height="550" Width="800"
+        ResizeMode="NoResize"
+        Topmost="True"
+        WindowStyle="SingleBorderWindow"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <!--Background Image-->
+        <Grid>
+            <Image Source="/Icons/clockblur.jpg" Stretch="Fill"/>
+        </Grid>
+            <!--Add Semester and Module information-->
+        <Grid Margin="0,0,400,225">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock x:Name="l1" Text="Total weeks in semester:" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontWeight="Thin" Margin="0,00,0,0"/>
+            <TextBox x:Name="tb1" Grid.Column="1" Margin="30,20,30,25" TextAlignment="Center" FontSize="18" FontWeight="Thin" Text="{Binding semWeeks, Mode=TwoWay}"/>
+            <TextBlock x:Name="l2" Grid.Row="1" Text="Start date of semester:" FontSize="18" FontWeight="Thin" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <DatePicker x:Name="dp1" Grid.Column="1" Grid.Row="1" Margin="30,15,30,15" Text="{Binding semStart, Mode=TwoWay}" FontSize="16" FontWeight="Thin"/>
+            <TextBlock x:Name="l3" Grid.Row="2" Text="Module Code:" FontSize="18" FontWeight="Thin" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <TextBox x:Name="tb2" Grid.Column="1" Grid.Row="2" TextAlignment="Center" FontSize="18" FontWeight="Thin" Margin="30,20,30,25" Text="{Binding modCode, Mode=TwoWay}"/>
+            <TextBlock x:Name="l4" Grid.Row="3" Text="Module Name:" FontSize="18" FontWeight="Thin" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBox x:Name="tb3" Grid.Column="1" Grid.Row="3" TextAlignment="Center" FontSize="18" FontWeight="Thin" Margin="30,20,30,25" Text="{Binding modName, Mode=TwoWay}"/>
+        </Grid>
+        <!--Add Module information-->
+        <Grid Margin="390,0,0,225">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock x:Name="l5" Text="Module Credits:" FontSize="18" FontWeight="Thin" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBox x:Name="tb4" Grid.Column="1" TextAlignment="Center" FontSize="18" FontWeight="Thin" Margin="30,15,30,15" Text="{Binding modCredits, Mode=TwoWay}"/>
+            <TextBlock x:Name="l6" Grid.Row="1" Text="Class Hours per Week:" FontSize="18" FontWeight="Thin" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBox x:Name="tb5" Grid.Column="1" Grid.Row="1" TextAlignment="Center" FontSize="18" FontWeight="Thin" Margin="30,15,30,15" Text="{Binding modWeekClassHrs, Mode=TwoWay}"/>
+            <TextBox x:Name="tb6" Grid.Row="3" Grid.Column="1" Margin="30,15,30,15" FontSize="18" FontWeight="Thin" TextAlignment="Center" Text="{Binding hrsFinCurrentWeek, Mode=TwoWay}"/>
+            <TextBlock x:Name="l7" Grid.Row="2" Text="Date of Self Study:" VerticalAlignment="Center" FontSize="18" FontWeight="Thin" HorizontalAlignment="Center"/>
+            <TextBlock x:Name="l8" Text="Number of Hours Studied:" Grid.Row="3" FontSize="18" FontWeight="Thin" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,5"/>
+            <TextBlock x:Name="l85" Text="(For the Specified Date)" Grid.Row="3" FontSize="12" FontWeight="Thin" HorizontalAlignment="Center" Margin="0,40,0,0"/>
+            <DatePicker x:Name="dp2" Grid.Row="2" Grid.Column="1" Margin="25,10,25,15" FontSize="16" FontWeight="Thin" Text="{Binding hrsFinDate, Mode=TwoWay}"/>
+            <Button x:Name="b1" Grid.Row="4" Grid.Column="1" FontSize="18" FontWeight="Thin" Margin="20,15,20,15" Content="Add Module" Background="White" Click="AddModuleButton"/>
+        </Grid>
+        <!--Display modules-->
+        <Grid>
+            <DataGrid x:Name="dg" Margin="20,300,20,60" FontSize="15" FontWeight="Thin">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Total Weeks" Width="90" Binding="{Binding semWeeks, Mode=TwoWay}"/>
+                    <DataGridTextColumn Header="Start Date" Width="100" Binding="{Binding semStart, Mode=TwoWay}"/>
+                    <DataGridTextColumn Header="Code" Width="80" Binding="{Binding modCode, Mode=TwoWay}"/>
+                    <DataGridTextColumn Header="Name" Width="130" Binding="{Binding modName, Mode=TwoWay}"/>
+                    <DataGridTextColumn Header="Credits" Width="70" Binding="{Binding modCredits, Mode=TwoWay}"/>
+                    <DataGridTextColumn Header="Hours in Class" Width="110" Binding="{Binding modWeekClassHrs, Mode=TwoWay}"/>
+                    <DataGridTextColumn Header="Required Study Hours" Width="*" Binding="{Binding hrsReqCurrentWeek, Mode=TwoWay}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+        <!--Menu Button-->
+        <Button x:Name="b2" Content="Menu" Background="White" FontWeight="Thin" FontSize="18" Margin="650,470,20,10" Click="MenuButton"/>
+        <!--Reset Grid Button-->
+        <Button x:Name="b3" Content="Reset Table" Background="White" FontWeight="Thin" FontSize="18" Margin="20,470,650,10" Click="ResetGridButton"/>
+        <!--Listbox for ordered modules using LINQ-->
+        <ListBox x:Name="lb" Margin="20,300,20,60" FontSize="16" FontWeight="Thin"/>
+        <!--View required study hours Button-->
+        <Button Content="View Remaining Study Hours" Background="White" FontWeight="Thin" FontSize="18" Margin="275,470,275,10" Click="ViewHoursButton"/>
+        <!--Return to viewing the datagrid button-->
+        <Button x:Name="b4" Content="Back" Background="White" FontWeight="Thin" FontSize="18" Margin="20,470,650,10" Click="BackButton"/>
+    </Grid>
+    
+</Window>
