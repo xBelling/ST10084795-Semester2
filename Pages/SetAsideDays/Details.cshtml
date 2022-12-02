@@ -1,0 +1,31 @@
+﻿@page
+@model POE_ST10084795.Pages.SetAsideDays.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>SetAsideDay</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SetAsideDay.ModuleCode)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SetAsideDay.ModuleCode)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SetAsideDay.DaySetAside)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SetAsideDay.DaySetAside)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.SetAsideDay?.ID">Edit</a> |
+    <a asp-page="./Index">Back to Index of Days set aside for Self Studying</a>
+</div>

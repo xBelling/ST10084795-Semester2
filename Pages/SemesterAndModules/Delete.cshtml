@@ -1,0 +1,64 @@
+﻿@page
+@model POE_ST10084795.Pages.SemesterAndModules.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete a Semester and Module";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>SemesterAndModule</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SemesterAndModule.SemesterStartDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SemesterAndModule.SemesterStartDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SemesterAndModule.SemesterWeeks)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SemesterAndModule.SemesterWeeks)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SemesterAndModule.ModuleCode)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SemesterAndModule.ModuleCode)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SemesterAndModule.ModuleName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SemesterAndModule.ModuleName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SemesterAndModule.ModuleCredits)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SemesterAndModule.ModuleCredits)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SemesterAndModule.ModuleClassHrs)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SemesterAndModule.ModuleClassHrs)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SemesterAndModule.ReqSelfStudyHrs)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SemesterAndModule.ReqSelfStudyHrs)
+        </dd>
+    </dl>
+
+    <form method="post">
+        <input type="hidden" asp-for="SemesterAndModule.ID" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to Index of the Semester and Modules</a>
+    </form>
+</div>

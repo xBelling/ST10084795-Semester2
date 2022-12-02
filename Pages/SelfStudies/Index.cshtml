@@ -1,0 +1,54 @@
+﻿@page
+@model POE_ST10084795.Pages.SelfStudies.IndexModel
+
+@{
+    ViewData["Title"] = "Index of Self Studies";
+}
+
+<h1>Index of Self Studies</h1>
+
+<p>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SemesterAndModule[0].ModuleCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SemesterAndModule[0].SelfStudyDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SemesterAndModule[0].SelfStudyHrs)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SemesterAndModule[0].RemSelfStudyHrs)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SemesterAndModule[0].WeekOfSemester)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.SemesterAndModule) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModuleCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SelfStudyDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SelfStudyHrs)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RemSelfStudyHrs)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WeekOfSemester)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

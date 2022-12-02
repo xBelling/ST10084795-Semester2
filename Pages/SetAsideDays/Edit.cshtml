@@ -1,0 +1,42 @@
+﻿@page
+@model POE_ST10084795.Pages.SetAsideDays.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>SetAsideDay</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="SetAsideDay.ID" />
+            <div class="form-group">
+                <label class="control-label">Module code</label>
+                <input asp-for="SetAsideDay.ModuleCode" class="form-control" />
+                <span asp-validation-for="SetAsideDay.ModuleCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Date of the day to set aside</label>
+                <input asp-for="SetAsideDay.DaySetAside" class="form-control" />
+                <span asp-validation-for="SetAsideDay.DaySetAside" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to Index of Days set aside for Self Studying</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

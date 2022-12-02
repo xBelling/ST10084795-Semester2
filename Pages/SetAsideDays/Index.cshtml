@@ -1,0 +1,42 @@
+﻿@page
+@model POE_ST10084795.Pages.SetAsideDays.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index for Days set aside for Self Study</h1>
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SetAsideDay[0].ModuleCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SetAsideDay[0].DaySetAside)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.SetAsideDay)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ModuleCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DaySetAside)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

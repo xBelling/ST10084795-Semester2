@@ -1,0 +1,72 @@
+﻿@page
+@model POE_ST10084795.Pages.SemesterAndModules.CreateModel
+
+@{
+    ViewData["Title"] = "Add a Semester and Module";
+}
+
+<h1>Create</h1>
+
+<h4>SemesterAndModule</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label class="control-label">Semester Start Date</label>
+                <input asp-for="SemesterAndModule.SemesterStartDate" class="form-control" />
+                <span asp-validation-for="SemesterAndModule.SemesterStartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Number of weeks in the Semester</label>
+                <input asp-for="SemesterAndModule.SemesterWeeks" class="form-control" />
+                <span asp-validation-for="SemesterAndModule.SemesterWeeks" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Module Code</label>
+                <input asp-for="SemesterAndModule.ModuleCode" class="form-control" />
+                <span asp-validation-for="SemesterAndModule.ModuleCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Module Name</label>
+                <input asp-for="SemesterAndModule.ModuleName" class="form-control" />
+                <span asp-validation-for="SemesterAndModule.ModuleName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Module Credits</label>
+                <input asp-for="SemesterAndModule.ModuleCredits" class="form-control" />
+                <span asp-validation-for="SemesterAndModule.ModuleCredits" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Number of Hours in Class per Week for the Module</label>
+                <input asp-for="SemesterAndModule.ModuleClassHrs" class="form-control" />
+                <span asp-validation-for="SemesterAndModule.ModuleClassHrs" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">Date if the Self Study</label>
+                <input asp-for="SemesterAndModule.SelfStudyDate" class="form-control" />
+                <span asp-validation-for="SemesterAndModule.SelfStudyDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Number of Hours of Self Study</label>
+                <input asp-for="SemesterAndModule.SelfStudyHrs" class="form-control" />
+                <span asp-validation-for="SemesterAndModule.SelfStudyHrs" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to Index of the Semester and Modules</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }
